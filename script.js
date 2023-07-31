@@ -1,4 +1,4 @@
-const button = document.querySelector(".start");
+const button = document.getElementById("button");
 let duration = document.getElementById("duration");
 
 function getDuration() {
@@ -14,7 +14,7 @@ const timerInterval = setInterval(function() {
   if (seconds <= 0) {
     clearInterval(timerInterval); // Stop the interval when the timer reaches 0
     document.getElementById("timer-white").innerHTML = "0:00";
-    document.querySelector(".clock").style.backgroundColor = "#111";
+    document.querySelector(".clock").style.backgroundColor = "#b3b3b3";
   } else {
     const minutes = Math.floor(seconds / 60); // Calculate the number of minutes remaining
     const remainingSeconds = seconds % 60; // Calculate the remaining seconds
@@ -30,3 +30,12 @@ const timerInterval = setInterval(function() {
   }
 }, 10);
 };
+
+function buttonActive() {
+  if(document.getElementById("duration").value === "") {
+    document.getElementById("button").disabled = true;
+  } else {
+    document.getElementById("button").disabled = false;
+  }
+}
+

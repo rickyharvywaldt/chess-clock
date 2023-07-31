@@ -11,13 +11,13 @@
 <body>
     <p>How many minutes do you want to play?</p>
     <div class="input">
-        <input type="text" id="duration" size="5" placeholder="1" required>
+        <input type="text" id="duration" onkeyup="buttonActive()" size="5" placeholder="1" required>
     </div>
     <div class="container">
         <div class="clock white">
             <h2 id="timer-white">4:59</h2>
         </div>
-        <div class="clock start" onclick="getDuration()">Start</div>
+        <button onclick="getDuration()" class="button" id="button" disabled >Start</button>
         <div class="clock black">
             <h2 id="timer-black">4:59</h2>
         </div>
